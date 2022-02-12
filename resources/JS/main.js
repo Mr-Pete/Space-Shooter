@@ -309,7 +309,7 @@ function startGame() {
 
 function quitGame() {
     window.close();
-}
+} add
 
 
 function changeSoundState() {
