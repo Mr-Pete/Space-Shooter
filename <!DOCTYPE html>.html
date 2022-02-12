@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Shooter</title>
+    <!-- CSS FILES -->
+    <link rel="stylesheet" href="./resources/CSS/index.css">
+  
+</head>
+
+<body class="text-center background-black text-white">
+    <!-- Main Menu -->
+    <div id="menu" class="display-full background-black">
+        <div class="row justify-content-center">
+            <div class="col-xl col-lg-3 col-md">
+                <div class="p">
+                    <div class="row">
+                        <div class="col-lg-1"></div>
+                        <div class="col-lg-2">
+                            <h1 class="font-weight-bolder">Space Shooter</h1>
+                            <button onclick="startGame()" class="btn btn-lg btn-outline-light  m pr pl"> Start
+                            </button>
+                            <br>
+                            <button id="levels" onclick="seeLevels()"
+                                class="btn btn-lg btn-outline-light  m pr pl"> Levels </button>
+                            <br>
+                            <button id="sound" onclick="changeSoundState()"
+                                class="btn btn-lg btn-outline-light  m pr pl"> Sound OFF </button>
+                            <br>
+                            <button onclick="quitGame()" class="btn btn-lg btn-outline-light  m pr pl"> Quit
+                            </button>
+                        </div>
+                        <div class="col-lg-1"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- LEVLES MENU -->
+    <div id="level-menu" style="display: none;" class="display-full background-black">
+        <div class="row justify-content-center">
+            <div class="col-xl col-lg-3 col-md">
+                <div class="p">
+                    <div class="row">
+                        <div class="col-lg-1"></div>
+                        <div class="col-lg-2">
+                            <h1>Levels</h1>
+                            <h6 id="level01">Level 01 -- Current</h6>
+                            <h6 id="level02">Level 02 -- Unlock</h6>
+                            <h6 id="level03">Level 03 -- Unlock</h6>
+                            <h6 id="level04">Level 04 -- Unlock</h6>
+                            <h6 id="level05">Level 05 -- Unlock</h6>
+                            <h6 id="level06">Level 06 -- Unlock</h6>
+                            <h6 id="level07">Level 07 -- Unlock</h6>
+                            <h6 id="level08">Level 08 -- Unlock</h6>
+                            <h6 id="level09">Level 09 -- Unlock</h6>
+                            <h6 id="level10">Level 10 -- Unlock</h6>
+                            <button onclick="backToMain()" class="btn btn-lg btn-outline-light"> Go Back
+                            </button>
+                        </div>
+                        <div class="col-lg-1"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  background-animation CLASS ADDING TO MOVE BACKGROUND -->
+    <div id="game" style="display: none;">
+        <canvas id="board" width="500" class="shadow background-animation background-purple"></canvas>
+        <div id="life">
+            <img id="level-ship">
+            <img src="./resources/PNG/UI/numeralX.png">
+            <img id="life-count">
+        </div>
+        <div id="score">
+            <img id="number5">
+            <img id="number4">
+            <img id="number3">
+            <img id="number2">
+            <img id="number1">
+        </div>
+        <h1 id="game-state" style="display: none;"></h1>
+        <h2 id="level">Level</h2>
+        <Button id="leftBtn" class="btn btn-light">Left</Button>
+        <Button id="shootBtn" class="btn btn-light">Shoot</Button>
+        <Button id="rightBtn" class="btn btn-light">Right</Button>
+    </div>
+</body>
+
+</html>
