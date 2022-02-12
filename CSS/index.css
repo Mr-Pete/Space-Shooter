@@ -1,0 +1,395 @@
+@font-face {
+    font-family: 'GameFont';
+    src: url('./Fonts/kenvector_future.ttf') format('truetype');
+}  
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    height: 100%;
+    font-family: 'GameFont';
+    caret-color: transparent;
+    overflow: hidden;
+    cursor: url("../PNG/UI/cursor.png") , default;
+    cursor: url("../PNG/UI/cursor.png") , pointer;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    user-select: none; /* supported by Chrome and Opera */
+   -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Firefox */
+   -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+
+/* H Tag Sizing */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+    font-weight: 400;
+    line-height: 1.2
+}
+
+h1 {
+    font-size: 3rem
+}
+
+h2 {
+    font-size: 2.5rem
+}
+
+h3 {
+    font-size: 2.25rem
+}
+
+h4 {
+    font-size: 2rem
+}
+
+h5 {
+    font-size: 1.75rem
+}
+
+h6 {
+    font-size: 1.5rem
+}
+
+/* HELPER CLASSES */
+.text-center {
+    text-align: center !important
+}
+
+.font-weight-bolder {
+    font-weight: bolder !important
+}
+
+.text-white {
+    color: #fff !important
+}
+
+.justify-content-center {
+    justify-content: center !important
+}
+
+.shadow {
+    box-shadow: 0 .15rem 1.75rem 0 rgba(255, 255, 255, .15) !important
+}
+
+/* Customer Classes AND ID */
+
+#life
+{
+    position: absolute;
+    top: 12%;
+    left: 38%;
+}
+
+
+#game-state
+{
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    left: 0%;
+}
+
+#score
+{
+    position: absolute;
+    top: 12%;
+    right: 32%;
+}
+
+#leftBtn
+{
+    bottom: 2%;
+    left: 32%;
+    text-align: center;
+    width: 80px;
+    height: 40px;
+    display: none;
+    position: absolute; 
+}
+
+#rightBtn
+{
+    bottom: 2%;
+    right: 32%;
+    text-align: center;
+    width: 80px;
+    height: 40px;
+    display: none;
+    position: absolute; 
+}
+
+#shootBtn
+{
+    bottom: 2%;
+    left: 0%;
+    text-align: center;
+    width: 80px;
+    height: 40px;
+    display: none;
+    position: absolute; 
+}
+
+#level
+{
+    top: 3%;
+    left: 0%;
+    right: 0%;
+    position: absolute;
+}
+
+@media (max-width: 1024px) {
+    #leftBtn,#rightBtn,#shootBtn
+    {
+        display: block;
+    }   
+}
+
+.background-animation
+{
+    animation: move_background 50s linear infinite;
+}
+
+@keyframes move_background
+{
+    0%{
+        background-position: 0px 0px;
+    }
+    100%{
+        background-position: 0px 2122px;
+    }
+}
+
+.background-black {
+    background-image: url("../Backgrounds/black.png");
+    background-size: contain;
+}
+
+.background-purple {
+    background-image: url("../Backgrounds/purple.png");
+    background-size: contain;
+}
+
+/* CALSSES FOR Sizing, Margining AND Padding */
+
+.p {
+    padding: 3rem !important
+}
+
+.m{
+    margin: .5rem !important;
+}
+.pr{
+    padding-right: 1.5rem !important;
+}
+.pl{
+    padding-left: 1.5rem !important;
+}
+
+/* Row and Col For MAKING GRID VIEW */
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -.75rem;
+    margin-left: -.75rem
+}
+
+.col-md,
+.col-lg-1,
+.col-lg-2,
+.col-lg-3,
+.col-xl
+{
+    position: relative;
+    width: 100%;
+    padding-right: .75rem;
+    padding-left: .75rem
+}
+
+@media (min-width: 768px)
+{
+    .col-md {
+        flex: 0 0 75%;
+        max-width: 75%
+    }
+}
+
+@media (min-width: 992px)
+{
+    .col-lg-1 {
+        flex: 0 0 8.33333%;
+        max-width: 8.33333%
+    }
+    .col-lg-2 {
+        flex: 0 0 83.33333%;
+        max-width: 83.33333%
+    }
+    .col-lg-3 {
+        flex: 0 0 100%;
+        max-width: 100%
+    }
+}
+
+@media (min-width: 1200px)
+{
+    .col-xl {
+        flex: 0 0 83.33333%;
+        max-width: 83.33333%
+    }
+}
+
+/* Button Code Light Button Proper Animation */
+
+.btn {
+    display: inline-block;
+    font-family: 'GameFont';
+    font-weight: 400;
+    color: #858796;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .35rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
+}
+
+@media (prefers-reduced-motion:reduce) {
+    .btn {
+        transition: none
+    }
+}
+
+.btn:hover {
+    color: #858796;
+    text-decoration: none
+}
+
+.btn.focus,
+.btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 .2rem rgba(78, 115, 223, .25)
+}
+
+.btn.disabled,
+.btn:disabled {
+    opacity: .65
+}
+
+a.btn.disabled,
+fieldset:disabled a.btn {
+    pointer-events: none
+}
+
+.btn-group-lg>.btn,
+.btn-lg {
+    padding: .5rem 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border-radius: .3rem
+}
+
+/* Light BUtton*/
+
+.btn-light {
+    color: #3a3b45;
+    background-color: #f8f9fc;
+    border-color: #f8f9fc
+}
+
+.btn-light:hover {
+    color: #3a3b45;
+    background-color: #dde2f1;
+    border-color: #d4daed
+}
+
+.btn-light.focus,
+.btn-light:focus {
+    color: #3a3b45;
+    background-color: #dde2f1;
+    border-color: #d4daed;
+    box-shadow: 0 0 0 .2rem rgba(220, 221, 225, .5)
+}
+
+.btn-light.disabled,
+.btn-light:disabled {
+    color: #3a3b45;
+    background-color: #f8f9fc;
+    border-color: #f8f9fc
+}
+
+.btn-light:not(:disabled):not(.disabled).active,
+.btn-light:not(:disabled):not(.disabled):active,
+.show>.btn-light.dropdown-toggle {
+    color: #3a3b45;
+    background-color: #d4daed;
+    border-color: #cbd3e9
+}
+
+.btn-light:not(:disabled):not(.disabled).active:focus,
+.btn-light:not(:disabled):not(.disabled):active:focus,
+.show>.btn-light.dropdown-toggle:focus {
+    box-shadow: 0 0 0 .2rem rgba(220, 221, 225, .5)
+}
+
+/* Light OUTLINE BUtton */
+
+.btn-outline-light {
+    color: #f8f9fc;
+    border-color: #f8f9fc
+}
+
+.btn-outline-light:hover {
+    color: #3a3b45;
+    background-color: #f8f9fc;
+    border-color: #f8f9fc
+}
+
+.btn-outline-light.focus,
+.btn-outline-light:focus {
+    box-shadow: 0 0 0 .2rem rgba(248, 249, 252, .5)
+}
+
+.btn-outline-light.disabled,
+.btn-outline-light:disabled {
+    color: #f8f9fc;
+    background-color: transparent
+}
+
+.btn-outline-light:not(:disabled):not(.disabled).active,
+.btn-outline-light:not(:disabled):not(.disabled):active,
+.show>.btn-outline-light.dropdown-toggle {
+    color: #3a3b45;
+    background-color: #f8f9fc;
+    border-color: #f8f9fc
+}
+
+.btn-outline-light:not(:disabled):not(.disabled).active:focus,
+.btn-outline-light:not(:disabled):not(.disabled):active:focus,
+.show>.btn-outline-light.dropdown-toggle:focus {
+    box-shadow: 0 0 0 .2rem rgba(248, 249, 252, .5)
+}
