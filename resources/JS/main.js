@@ -293,6 +293,15 @@ function startGame() {
     document.getElementById("menu").style.display = "none";
     document.getElementById("game").style.display = "block";
     resize();
+
+    //CHECKING if web is running on mobile deveices then show button of contorls
+    let details = navigator.userAgent;
+    let regexp = /android|iphone|kindle|ipad/i;
+    if (regexp.test(details)) {
+        document.getElementById("leftBtn").style.display = "block";
+        document.getElementById("rightBtn").style.display = "block";
+        document.getElementById("shootBtn").style.display = "block";
+    }
     gameEngine.start();
 }
 

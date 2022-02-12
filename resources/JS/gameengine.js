@@ -1,4 +1,5 @@
 class GameEngine {
+    // This game shell was happily modified from Googler Seth Ladd's "Bad Aliens" game and his Google IO talk in 2011
     constructor(options) {
         // What you will use to draw
         // Documentation: https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D
@@ -60,7 +61,7 @@ class GameEngine {
     };
 
     startInput() {
-        //Reference to self because JS.
+        
         var that = this;
 
         const getXandY = e => ({
@@ -70,7 +71,7 @@ class GameEngine {
         //Player input block; all player inputs go here...
         document.addEventListener("keydown", e => {
             switch (e.code) {
-                //Player Movement with WASD
+                //Player Movement with A D Bar Esc
                 case "KeyA":
                     that.left = true;
                     break;
@@ -89,7 +90,7 @@ class GameEngine {
         //Now to detect key releases. Use same pattern as above...
         document.addEventListener("keyup", e => {
             switch (e.code) {
-                //Player Movement with WASD
+                //Player Movement with A D Bar Esc
                 case "KeyA":
                     that.left = false;
                     break;

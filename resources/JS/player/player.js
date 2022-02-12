@@ -1,11 +1,12 @@
-const PG_WIDTH = 120; //Should match player graphic in final.
-const PG_HEIGHT = 120; //Should match player graphic in final.
+// This game shell was happily modified from Googler Seth Ladd's "Bad Aliens" game and his Google IO talk in 2011
+const PG_WIDTH = 120; 
+const PG_HEIGHT = 120; 
 
-const PGW_CENTER = PG_WIDTH / 2; //Measures center of player graphic, x-value.
-const PGH_CENTER = PG_HEIGHT / 2; //Center of player graphic, y-value.
+const PGW_CENTER = PG_WIDTH / 2; 
+const PGH_CENTER = PG_HEIGHT / 2; 
 
-const PLAYER_FRICTION = 0.90; //Rate at which speed decreases. Lower = slower.
-const PLAYER_RADIUS = 40; //Radius of player.
+const PLAYER_FRICTION = 0.90; 
+const PLAYER_RADIUS = 40; 
 
 
 class PlayerShip {
@@ -15,7 +16,7 @@ class PlayerShip {
     */
     constructor(game, playerSpeed, player_fire_rate, bulletSpeed, bulletCanvas, bulletWidth, bulletHeight, ship, srcShip, srcShield, srcFire, srcBullet, srcBulletEffect) {
         this.game = game;
-        this.imageShip = ASSET_MANAGER.getAsset(srcShip); //Messy hardcode, fix later.
+        this.imageShip = ASSET_MANAGER.getAsset(srcShip); 
         this.imageShield = ASSET_MANAGER.getAsset(srcShield);
         this.imageFire = ASSET_MANAGER.getAsset(srcFire);
         this.srcBullet = srcBullet;
@@ -69,14 +70,13 @@ class PlayerShip {
         this.sound4 = new Audio("./resources/Sounds/sfx_laser1.ogg");
         this.sound5 = new Audio("./resources/Sounds/sfx_laser1.ogg");
 
-        this.xVelocity = 0; //Change in X between ticks.
+        this.xVelocity = 0;
 
-        this.angle;         //Direction player points in, 0 is straight up...?
+        this.angle;         
     }
 
     /*
     Draw the PlayerShip.
-
     Rotates to point to the cursor.
     */
     draw(ctx) {
@@ -86,7 +86,7 @@ class PlayerShip {
         myCanvas.height = PG_HEIGHT;
         var myCtx = myCanvas.getContext('2d');
         myCtx.save();
-        myCtx.translate(PGW_CENTER, PGH_CENTER); //This should go to the center of the object.
+        myCtx.translate(PGW_CENTER, PGH_CENTER); 
         this.angle = this.rotateHandle();
         myCtx.rotate(this.angle);
         myCtx.translate(-(PGW_CENTER), -(PGH_CENTER));
@@ -104,7 +104,7 @@ class PlayerShip {
     Update player's state.
     */
     update() {
-        //TODO Get final player graphic so we can do a proper check on edges.
+        
 
         this.moveHandle();
         this.rotateHandle();
@@ -143,9 +143,6 @@ class PlayerShip {
 
     /*
     Create a bullet given the location of the last click.
-    This creates a new Bullet object using the Player's X and Y,
-    and the X and Y coordinates of the last click. Please see
-    bullet.js for more information.
     */
     shoot(click) {
         if (this.game.isSoundPlay) {
@@ -170,22 +167,16 @@ class PlayerShip {
 
     /*
     Control player's movement.
-
-    The player's movement is velocity based - it rapidly approaches a cap.
-    This is to give "flow" of movement.
     */
     moveHandle() {
         //Note: commented code 
         let effectiveMoveRate = this.playerSpeed * this.game.clockTick;
 
         //Calculate the x velocity.
-        //This is found by adding "left" to "right"; if both are pressed, no movement.
         this.xVelocity += (
-            //Get player's movement in the first place.
             (this.game.left ? (-1 * effectiveMoveRate) : 0) + (this.game.right ? effectiveMoveRate : 0)
         );
 
-        //Calculate differences and change position according to clock tick.
         this.x += this.xVelocity;
 
         if (this.x <= 0) {
@@ -195,8 +186,6 @@ class PlayerShip {
             this.x = 500 - PG_WIDTH;
         }
 
-        //Calculate friction.
-
         this.xVelocity *= PLAYER_FRICTION;
 
         this.updateCenter();
@@ -205,7 +194,7 @@ class PlayerShip {
 
     /*
     Update the player's center.
-    For the bounding circle.
+    
     */
     updateCenter() {
         this.xCenter = this.x + PGW_CENTER;
@@ -215,17 +204,13 @@ class PlayerShip {
 
     /*
     Handles rotating the player.
-    The player points toward the cursor using trigonometry.
-    Please don't alter the math here unless it's really necessary,
-    it's very finicky and prone to fit-throwing.
     */
     rotateHandle() {
         var mouse = this.game.mouse;
         if (mouse == null) {
-            return (0); //If mouse isn't defined yet, don't try to rotate.
-            //I know this is gross, bear with me.
+            return (0); 
         }
-        var dx = (mouse.x) - (this.x + PGW_CENTER); //Accounting for difference in center of thing.
+        var dx = (mouse.x) - (this.x + PGW_CENTER); 
         var dy = (mouse.y) - (this.y + PGH_CENTER);
         var rotationAngle = Math.atan2(dy, dx) + (Math.PI / 2);
         return (rotationAngle);
@@ -233,20 +218,12 @@ class PlayerShip {
 
     /*
     Handle collisions with various objects.
- 
-    This should primarily check for collisions with enemies.
-    Later, it could be extended to deal with items or whatnot.
     */
     checkForCollisions() {
 
         var that = this;
 
         this.game.entities.forEach(function (entity) {
-            /*
-            Check if thing has bounding circle.
-            If so, make sure it's not the player.
-            If that's true, actually detect collision.
-            */
             if (!(typeof entity.BoundingCircle === 'undefined') && !(entity instanceof PlayerShip) && !(entity instanceof Bullet)
                 && entity.BoundingCircle && that.BoundingCircle.collide(entity.BoundingCircle)) {
                 that.health -= that.damage;
