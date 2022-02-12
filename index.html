@@ -32,9 +32,9 @@
                         <div class="col-lg-1"></div>
                         <div class="col-lg-2">
                             <h1 class="font-weight-bolder">Space Shooter</h1>
-                            <h2 class="font-weight-bolder">How to Play ?</h2>
-                            <h3 class="font-weight-bolder">Use A D keys to move Left and Right <br> Spacebar to shoot <br> Alternatively mouse or on screen buttons
-                            </h3>
+                            <h5 class="font-weight-bolder">How to Play ?</h5>
+                            <h5 class="font-weight-bolder">Use A D keys to move Left and Right <br> Spacebar to shoot <br> Alternatively mouse or on screen buttons
+                            </h5>
                             <button onclick="startGame()" class="btn btn-lg btn-outline-light  m pr pl"> Start
                             </button>
                             <br>
@@ -98,9 +98,9 @@
         </div>
         <h1 id="game-state" style="display: none;"></h1>
         <h2 id="level">Level</h2>
-        <Button id="leftBtn" class="btn btn-light">Left</Button>
-        <Button id="shootBtn" class="btn btn-light">Shoot</Button>
-        <Button id="rightBtn" class="btn btn-light">Right</Button>
+        <Button id="leftBtn" class="btn btn-light" onclick="startInput()">Left</Button>
+        <Button id="shootBtn" class="btn btn-light" onclick="startInput()">Shoot</Button>
+        <Button id="rightBtn" class="btn btn-light" onclick="startInput()">Right</Button>
     </div>
 </body>
 
