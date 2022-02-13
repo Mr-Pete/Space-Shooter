@@ -1,108 +1,65 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Space Shooter 
 
-Welcome Mr-Pete,
+## Welcome to the site of the best retro game 
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Space Shooter game was made as project to learn and develop JavaScript skills. The purpose of the game is to destroy enemies ships and avoid objects flying into players direction like meteors or enemy missiles. Game should entertain the user with attractive design and 10 levels to accomplish where difficulty will progressively increase.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+![screenshot](resources/Screenshoots/game.png "Screenshot")
 
-## Gitpod Reminders
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Features
 
-`python3 -m http.server`
+Space Shooter game have a number of features to help gamer stayed entertained and provide informations about current progress.
+ 
+#### 1. Main Menu     
+  * Provides clear informations about the game controls and how to use them. 
+  * Mouse pointer in Main Menu is represented as a space ship to build an excitement of upcoming adventure and enhance user experience.
+ ![main menu screenshot](resources/Screenshoots/mainmenu.png "Main Menu Screenshot") 
 
-A blue button should appear to click: _Make Public_,
+ 
 
-Another blue button should appear to click: _Open Browser_.
+#### 2. The levels page
+  * Informs player about the progress in the clear and understandable way.
+  ![levels menu screenshot](resources/Screenshoots/levels.png "Levels Menu Screenshot") 
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+#### 3.  Sound Button
+  * Give player an option to disable sound effects. 
 
-A blue button should appear to click: _Make Public_,
+#### 4. In Game Information Bar
+  * Status bar displayed in the top of the game screen provides vital informations for the player.
+  * Number of lifes left.
+  * Number of points scored
+  * Current level
+  ![status bar screenshot](resources/Screenshoots/status.png "Status Bar Screnshot")
 
-Another blue button should appear to click: _Open Browser_.
+#### 5. On Screen Buttons  
+  * TTo improve user experience on mobile devices and facilitate easy movement of spaceship, game will display on screen buttons like Left, Right and Shoot. 
+  *![onscreen buttons screenshot](resources/Screenshoots/onscreen.png "Onscreen Buttons Screenshot")
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
 
-To log into the Heroku toolbelt CLI:
+## Testing 
+  Extensive testing was employed to ensure responsiveness of Space Sooter game at all the devices. During that process a number of minor bug was eliminated like:
+   * On screen buttons no responding. 
+   * No validation of display port to change screen size.  
+  
+### Validator Testing 
+  1. HTML - minor errors and warnings returned, type=text/javascript warning to be fixed shortly but do to deadline ignored for now. IMG errors ignored due to the JavaSript nature of the porject, will be eplored in futre. All the rest passed though the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmr-pete.github.io%2FSpace-Shooter%2F)
+  2. CSS - no errors returned, all passed through [Jigsaw validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fmr-pete.github.io%2FSpace-Shooter%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=pl-PL)
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
-------
-
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+## Deployment
+  Space Ship was deployed to GitHub pages by the standard steps including:
+    * Navigation to settings in the GitHub repository and Pages section
+    * Selection of Main Branch from drop-down source menu.
+ The live link to the website - https://mr-pete.github.io/Space-Shooter/
+ 
+ ## Credits
+ 
+ ### Content
+  * The game inspiration was taken from [Google I/O 2011](https://www.youtube.com/watch?v=yEocRtn_j9s)
+  * The instruction on how to build a game engine were taken from [Seth Ladd's Blog](http://blog.sethladd.com/2011/05/source-code-slides-and-video-for-html5.html)
+  * The pointer and icons were taken from [Noun Project](https://thenounproject.com/)
+ 
+ ### Media
+  * The png files were sourced from [pikpng](https://www.pikpng.com/) and [kindpng](https://www.kindpng.com/)
+  * Game sound effects were downloaded from [mixkit](https://mixkit.co/free-sound-effects/game/)
+  
