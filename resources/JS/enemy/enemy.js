@@ -1,6 +1,4 @@
-/*
-Enemies... Enemy.
-*/
+// This game shell was happily modified from Googler Seth Ladd's "Bad Aliens" game and his Google IO talk in 2011
 
 class Enemy {
     constructor(game, player, width, height, start_x, start_y, move_rate_x, move_rate_y, shoot_time, isStraight, bulletCanvas, bulletWidth, bulletHeight, bulletSpeed, src, srcBullet, srcBulletEffect) {

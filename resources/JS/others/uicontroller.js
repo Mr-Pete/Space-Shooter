@@ -1,3 +1,4 @@
+// This game shell was happily modified from Googler Seth Ladd's "Bad Aliens" game and his Google IO talk in 2011
 class UIController {
     /*
     Create the SCORE CONTOLLER object.

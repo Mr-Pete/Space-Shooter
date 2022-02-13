@@ -1,5 +1,4 @@
-//Concept of a bullet.
-//Could be subclassed as "PlayerBullet" and "DodgerBullet"...
+// This game shell was happily modified from Googler Seth Ladd's "Bad Aliens" game and his Google IO talk in 2011
 
 class Bullet {
     constructor(game, parentTag, canvasSize, width, height, speed, x, y, mouseX, mouseY, src,srcEffect) {

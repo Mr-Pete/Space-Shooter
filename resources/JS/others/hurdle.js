@@ -1,6 +1,4 @@
-/*
-Hurdless... hurdle.
-*/
+// This game shell was happily modified from Googler Seth Ladd's "Bad Aliens" game and his Google IO talk in 2011
 class Hurdle {
     constructor(game, width, height, x, y, min_x, max_x, min_y, max_y, move_rate_x, move_rate_y, src) {
         //Initialize element.
